@@ -28,8 +28,11 @@ var GameOfLife = {
     for (var i = 0; i < a.length; i++) {
       var row = a[i];
       for (var j = 0; j < row.length; j++) {
-        var sell = row[j];
+        var cell = row[j];
         var willBeAlive = GameOfLife.applyRule(a, i, j)
+        if (willBeAlive){
+          b[i][j] = true;
+        }
       }
     }
   },
